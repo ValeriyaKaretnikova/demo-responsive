@@ -1,0 +1,41 @@
+/* Rules of responsive web design (RWD)
+1. Flexible Images
+2. Fluid / liquid grids (layout) (% based)
+3. Media Queries */
+
+/* To create flexible images... */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* Mobile first development: start styling our smallest screen (320px width) first and our generic CSS. Generic CSS gets applied to all screens/viewports */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+header,
+section {
+    padding: 16px;
+}
+p,
+.col {
+    margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 850px){
+    .col-group {
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-between;
+    }
+    .col {
+        /* width: 50%; */
+        width: calc(99% / 2);
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .col {
+        width: calc(97% / 4);
+    }
+}
